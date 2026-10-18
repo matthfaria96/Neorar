@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleAllowMixedLocalizations</key>
+	<true/>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>pt-BR</string>
+	<key>CFBundleDisplayName</key>
+	<string>Neorar</string>
+	<key>CFBundleExecutable</key>
+	<string>NeorarFinder</string>
+	<key>CFBundleIdentifier</key>
+	<string>app.neorar.mac.FinderSync</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>pt-BR</string>
+		<string>en</string>
+		<string>es</string>
+		<string>fr</string>
+		<string>de</string>
+	</array>
+	<key>CFBundleName</key>
+	<string>NeorarFinder</string>
+	<key>CFBundlePackageType</key>
+	<string>XPC!</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>26.0</string>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionAttributes</key>
+		<dict/>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.FinderSync</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>NeorarFinder.FinderSync</string>
+	</dict>
+	<key>NSHumanReadableCopyright</key>
+	<string>Neorar</string>
+</dict>
+</plist>

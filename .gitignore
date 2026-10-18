@@ -1,0 +1,6 @@
+.build/
+build/
+.swiftpm/
+Vendor/7zz
+Vendor/7-Zip-License.txt
+.DS_Store
