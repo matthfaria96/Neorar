@@ -1,60 +1,62 @@
 # Neorar Mac
 
-Gerenciador de arquivos compactados para macOS 26+, em Swift e SwiftUI, no estilo do WinRAR: uma janela só, que navega pelas pastas (começa em Downloads), entra em arquivos compactados e age sobre a seleção. É um app independente (não faz parte do Sirena), escrito do zero; nada do RAR Extractor Max foi aproveitado.
+**English** · [Português](README.pt-BR.md)
 
-## Funções
+An archive manager for macOS 26+, built in Swift and SwiftUI, in the style of WinRAR: a single window that browses folders (starting in Downloads), steps into archives and acts on the selection. It is a standalone app (not part of Sirena), written from scratch; nothing from RAR Extractor Max was reused.
 
-| Área | O que faz |
+## Features
+
+| Area | What it does |
 |---|---|
-| **Navegação** | Pastas e arquivos compactados em lista ou ícones (miniaturas Quick Look), ordenação por coluna, filtro, local com menu (caminho, Downloads, Mesa, Documentos, recentes), voltar/subir, atualização automática quando algo muda no disco |
-| **Extrair** | Aqui / Para… / para "Nome/", RAR 1.5–7 (RAR5, sólido, senha, nomes criptografados, volumes `.partN.rar`/`.rNN`), ZIP (AES, codificação de nomes), 7Z, TAR.*, ISO, DMG, CAB, MSI, ARJ, LZH… |
-| **Dentro do arquivo** | Árvore ou ícones, busca, Espiar (Quick Look), abrir, extrair só a seleção |
-| **Comprimir** | 7Z (padrão), ZIP (AES-256), TAR.GZ/XZ/BZ2; RAR só com o `rar` licenciado da RARLAB. "Avançados": senha, nomes ocultos, partes, sólido, recuperação, ignorar lixo do macOS, originais para o Lixo |
-| **Editar arquivo existente** | Adicionar (botão, arrastar para a janela, dentro da pasta atual do arquivo) e excluir itens; 7Z/ZIP/TAR via 7-Zip, RAR com o `rar` licenciado |
-| **Comentários** | Faixa de comentário ao abrir (RAR/ZIP), comentário na janela Info, criação em Comprimir › Avançados |
-| **Testar / Reparar / Info** | Integridade com resultado em modal; reparo de RAR (`rar r`, registro de recuperação) e ZIP (`zip -FF`) em cópia "(reparado)"; propriedades |
-| **Feedback** | Pergunta de conflito (Substituir / Manter ambos / Cancelar), painel de progresso, avisos com Mostrar/Desfazer, itens novos selecionados com marcador, Excluir com Desfazer |
-| **Ajustes** | Geral (tema Sistema/Claro/Escuro, estilo dos ícones, idioma, ação “Comprimir” do Finder), Extração, Compressão, RAR e Sobre com as licenças completas |
-| **Idiomas** | Português, inglês, espanhol, francês e alemão (`scripts/translations.py` → `make-localizations.py`) |
-| **Integração** | Menu do Finder (extensão Finder Sync): Extrair Aqui, Extrair para “Nome/”, Extrair Para…, Comprimir; Abrir com, Serviços, copiar caminho (⌥⌘C) |
+| **Browsing** | Folders and archives as a list or icons (Quick Look thumbnails), sorting by column, filter, location menu (path, Downloads, Desktop, Documents, recents), back/up, automatic refresh when something changes on disk |
+| **Extract** | Here / To… / to "Name/", RAR 1.5–7 (RAR5, solid, password, encrypted names, `.partN.rar`/`.rNN` volumes), ZIP (AES, name encoding), 7Z, TAR.*, ISO, DMG, CAB, MSI, ARJ, LZH… |
+| **Inside the archive** | Tree or icons, search, Peek (Quick Look), open, extract only the selection |
+| **Compress** | 7Z (default), ZIP (AES-256), TAR.GZ/XZ/BZ2; RAR only with RARLAB's licensed `rar`. "Advanced": password, hidden names, split parts, solid, recovery, skip macOS junk, originals to Trash |
+| **Edit an existing archive** | Add (button, drag onto the window, into the archive's current folder) and delete items; 7Z/ZIP/TAR via 7-Zip, RAR with the licensed `rar` |
+| **Comments** | Comment banner on open (RAR/ZIP), comment in the Info window, creation in Compress › Advanced |
+| **Test / Repair / Info** | Integrity check with the result in a dialog; repair of RAR (`rar r`, recovery record) and ZIP (`zip -FF`) into a "(repaired)" copy; properties |
+| **Feedback** | Conflict question (Replace / Keep both / Cancel), progress panel, notices with Show/Undo, new items selected and marked, Delete with Undo |
+| **Settings** | General (System/Light/Dark theme, icon style, language, Finder "Compress" action), Extraction, Compression, RAR and About with the full licenses |
+| **Languages** | Portuguese, English, Spanish, French and German (`scripts/translations.py` → `make-localizations.py`) |
+| **Integration** | Finder menu (Finder Sync extension): Extract Here, Extract to "Name/", Extract To…, Compress; Open With, Services, copy path (⌥⌘C) |
 
-## Arquitetura
+## Architecture
 
 ```
 Sources/
-  CUnrar/        UnRAR 7.30 oficial (RARLAB) + shim C: RAR em processo
-  CLibArchive/   Declarações da libarchive do sistema: família tar em processo
-  NeorarCore/    Motores, extração com área temporária, conflitos, teste, compressão
-  Neorar/        App SwiftUI (janela única, barra de ações, folhas de Comprimir/Info/Senha)
+  CUnrar/        Official UnRAR 7.30 (RARLAB) + C shim: RAR in process
+  CLibArchive/   Declarations for the system libarchive: tar family in process
+  NeorarCore/    Engines, extraction through a temporary area, conflicts, testing, compression
+  Neorar/        SwiftUI app (single window, action bar, Compress/Info/Password sheets)
 Extensions/
-  FinderSync/    Extensão do Finder; envia ações ao app por neorar://
+  FinderSync/    Finder extension; sends actions to the app through neorar://
 ```
 
-A extensão é ativada em Ajustes › Geral › Menu do Finder (ou Ajustes do Sistema › Extensões).
+Turn the extension on in Settings › General › Finder menu (or System Settings › Extensions).
 
-- RAR → UnRAR em processo (~1,8 GB/s); tar.* → libarchive do macOS; demais formatos e criação de 7Z/ZIP → `7zz` oficial embutido.
-- Senhas vão por stdin (exceto no fallback opcional `unar`, que só aceita senha por argumento).
-- A extração acontece numa pasta oculta no destino; o resultado é movido com um `rename`, e cancelar não deixa lixo.
+- RAR → UnRAR in process (~1.8 GB/s); tar.* → macOS libarchive; other formats and 7Z/ZIP creation → the bundled official `7zz`.
+- Passwords go through stdin (except in the optional `unar` fallback, which only takes a password as an argument).
+- Extraction happens in a hidden folder at the destination; the result is moved with a `rename`, and cancelling leaves no leftovers.
 
 ## Build
 
-Requer Xcode 27 (os plugins de macro do SwiftUI não vêm nas Command Line Tools).
+Requires Xcode 27 (SwiftUI's macro plugins don't ship with the Command Line Tools).
 
 ```sh
-./build-app.sh            # build/Neorar.app (universal, assinatura ad hoc)
-./build-app.sh --install  # e copia para /Applications
+./build-app.sh            # build/Neorar.app (universal, ad hoc signature)
+./build-app.sh --install  # and copies it to /Applications
 ```
 
-O ícone é gerado por `scripts/make-icon.swift` → `Resources/icon_1024.png`.
+The icon is generated by `scripts/make-icon.swift` → `Resources/icon_1024.png`.
 
-## Testes
+## Tests
 
 ```sh
 DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer swift test
-NEORAR_RAR=/caminho/para/rar swift test                    # inclui criação de RAR
-NEORAR_BENCH=/caminho/arquivo.rar swift test -c release --filter Benchmark
+NEORAR_RAR=/path/to/rar swift test                    # includes RAR creation
+NEORAR_BENCH=/path/to/archive.rar swift test -c release --filter Benchmark
 ```
 
-## Licenças
+## Licenses
 
-Veja [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
