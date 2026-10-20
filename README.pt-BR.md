@@ -59,4 +59,6 @@ NEORAR_BENCH=/caminho/arquivo.rar swift test -c release --filter Benchmark
 
 ## Licenças
 
-Veja [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+O NeoRAR é software livre, distribuído sob a [GNU General Public License v3.0](LICENSE). Copyright (C) 2026 Matheus Faria.
+
+Os componentes de terceiros que ele inclui ou usa (UnRAR, 7-Zip, libarchive) mantêm as próprias licenças; veja [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

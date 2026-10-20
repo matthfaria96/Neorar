@@ -285,8 +285,9 @@
 "Não é possível reparar “%@”" = "Não é possível reparar “%@”";
 "O 7-Zip terminou com o código %d." = "O 7-Zip terminou com o código %d.";
 "O Neorar abre direto em Downloads para você começar." = "O Neorar abre direto em Downloads para você começar.";
-"O Neorar abre, extrai e comprime arquivos no Mac: RAR (inclusive volumes e senha), 7Z, ZIP, TAR e dezenas de outros formatos. Também testa, repara e edita arquivos compactados, sem sair do Finder." = "O Neorar abre, extrai e comprime arquivos no Mac: RAR (inclusive volumes e senha), 7Z, ZIP, TAR e dezenas de outros formatos. Também testa, repara e edita arquivos compactados, sem sair do Finder.";
-"O Neorar inclui ou usa os componentes abaixo. Os avisos de copyright e as licenças ficam aqui, como essas licenças exigem." = "O Neorar inclui ou usa os componentes abaixo. Os avisos de copyright e as licenças ficam aqui, como essas licenças exigem.";
+"O NeoRAR abre, extrai e comprime arquivos no Mac: RAR (inclusive volumes e senha), 7Z, ZIP, TAR e dezenas de outros formatos. Também testa, repara e edita arquivos compactados, sem sair do Finder." = "O NeoRAR abre, extrai e comprime arquivos no Mac: RAR (inclusive volumes e senha), 7Z, ZIP, TAR e dezenas de outros formatos. Também testa, repara e edita arquivos compactados, sem sair do Finder.";
+"O NeoRAR inclui ou usa os componentes abaixo. Os avisos de copyright e as licenças ficam aqui, como essas licenças exigem." = "O NeoRAR inclui ou usa os componentes abaixo. Os avisos de copyright e as licenças ficam aqui, como essas licenças exigem.";
+"O NeoRAR é software livre sob a GNU GPL v3.0. Ele se apoia nos projetos de código aberto listados nas licenças." = "O NeoRAR é software livre sob a GNU GPL v3.0. Ele se apoia nos projetos de código aberto listados nas licenças.";
 "O arquivo compactado não foi criado." = "O arquivo compactado não foi criado.";
 "O arquivo está corrompido." = "O arquivo está corrompido.";
 "O arquivo está incompleto: falta um volume." = "O arquivo está incompleto: falta um volume.";

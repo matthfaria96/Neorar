@@ -59,4 +59,6 @@ NEORAR_BENCH=/path/to/archive.rar swift test -c release --filter Benchmark
 
 ## Licenses
 
-See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+NeoRAR is free software, released under the [GNU General Public License v3.0](LICENSE). Copyright (C) 2026 Matheus Faria.
+
+The third-party components it includes or uses (UnRAR, 7-Zip, libarchive) keep their own licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

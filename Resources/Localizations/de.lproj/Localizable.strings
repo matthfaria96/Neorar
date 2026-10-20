@@ -285,8 +285,9 @@
 "Não é possível reparar “%@”" = "„%@“ kann nicht repariert werden";
 "O 7-Zip terminou com o código %d." = "7-Zip wurde mit Code %d beendet.";
 "O Neorar abre direto em Downloads para você começar." = "Neorar öffnet direkt „Downloads“, damit du gleich loslegen kannst.";
-"O Neorar abre, extrai e comprime arquivos no Mac: RAR (inclusive volumes e senha), 7Z, ZIP, TAR e dezenas de outros formatos. Também testa, repara e edita arquivos compactados, sem sair do Finder." = "Neorar öffnet, entpackt und komprimiert Archive auf dem Mac: RAR (auch mehrteilig und mit Passwort), 7Z, ZIP, TAR und Dutzende weitere Formate. Außerdem testet, repariert und bearbeitet es Archive, direkt aus dem Finder.";
-"O Neorar inclui ou usa os componentes abaixo. Os avisos de copyright e as licenças ficam aqui, como essas licenças exigem." = "Neorar enthält oder nutzt die folgenden Komponenten. Ihre Copyright-Hinweise und Lizenzen stehen hier, wie es diese Lizenzen verlangen.";
+"O NeoRAR abre, extrai e comprime arquivos no Mac: RAR (inclusive volumes e senha), 7Z, ZIP, TAR e dezenas de outros formatos. Também testa, repara e edita arquivos compactados, sem sair do Finder." = "NeoRAR öffnet, entpackt und komprimiert Archive auf dem Mac: RAR (auch mehrteilig und mit Passwort), 7Z, ZIP, TAR und Dutzende weitere Formate. Außerdem testet, repariert und bearbeitet es Archive, direkt aus dem Finder.";
+"O NeoRAR inclui ou usa os componentes abaixo. Os avisos de copyright e as licenças ficam aqui, como essas licenças exigem." = "NeoRAR enthält oder nutzt die folgenden Komponenten. Ihre Copyright-Hinweise und Lizenzen stehen hier, wie es diese Lizenzen verlangen.";
+"O NeoRAR é software livre sob a GNU GPL v3.0. Ele se apoia nos projetos de código aberto listados nas licenças." = "NeoRAR ist freie Software unter der GNU GPL v3.0. Es baut auf den Open-Source-Projekten auf, die in seinen Lizenzen aufgeführt sind.";
 "O arquivo compactado não foi criado." = "Das Archiv wurde nicht erstellt.";
 "O arquivo está corrompido." = "Das Archiv ist beschädigt.";
 "O arquivo está incompleto: falta um volume." = "Das Archiv ist unvollständig: Ein Teil fehlt.";

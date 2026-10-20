@@ -285,8 +285,9 @@
 "Não é possível reparar “%@”" = "No se puede reparar «%@»";
 "O 7-Zip terminou com o código %d." = "7-Zip terminó con el código %d.";
 "O Neorar abre direto em Downloads para você começar." = "Neorar se abre directamente en Descargas para empezar.";
-"O Neorar abre, extrai e comprime arquivos no Mac: RAR (inclusive volumes e senha), 7Z, ZIP, TAR e dezenas de outros formatos. Também testa, repara e edita arquivos compactados, sem sair do Finder." = "Neorar abre, extrae y comprime archivos en el Mac: RAR (incluidos volúmenes y contraseña), 7Z, ZIP, TAR y decenas de otros formatos. También prueba, repara y edita archivos comprimidos, sin salir del Finder.";
-"O Neorar inclui ou usa os componentes abaixo. Os avisos de copyright e as licenças ficam aqui, como essas licenças exigem." = "Neorar incluye o usa los componentes siguientes. Sus avisos de copyright y licencias se conservan aquí, como exigen esas licencias.";
+"O NeoRAR abre, extrai e comprime arquivos no Mac: RAR (inclusive volumes e senha), 7Z, ZIP, TAR e dezenas de outros formatos. Também testa, repara e edita arquivos compactados, sem sair do Finder." = "NeoRAR abre, extrae y comprime archivos en el Mac: RAR (incluidos volúmenes y contraseña), 7Z, ZIP, TAR y decenas de otros formatos. También prueba, repara y edita archivos comprimidos, sin salir del Finder.";
+"O NeoRAR inclui ou usa os componentes abaixo. Os avisos de copyright e as licenças ficam aqui, como essas licenças exigem." = "NeoRAR incluye o usa los componentes siguientes. Sus avisos de copyright y licencias se conservan aquí, como exigen esas licencias.";
+"O NeoRAR é software livre sob a GNU GPL v3.0. Ele se apoia nos projetos de código aberto listados nas licenças." = "NeoRAR es software libre bajo la GNU GPL v3.0. Se basa en los proyectos de código abierto que figuran en sus licencias.";
 "O arquivo compactado não foi criado." = "No se creó el archivo comprimido.";
 "O arquivo está corrompido." = "El archivo está dañado.";
 "O arquivo está incompleto: falta um volume." = "El archivo está incompleto: falta un volumen.";

@@ -314,77 +314,47 @@ private struct AboutSettings: View {
             VStack(spacing: 0) {
                 Image(nsImage: NSApp.applicationIconImage)
                     .resizable()
-                    .frame(width: 104, height: 104)
-                    .shadow(color: .black.opacity(0.3), radius: 14, y: 6)
-                    .padding(.bottom, 16)
-                Text("Neorar")
-                    .font(.system(size: 26, weight: .semibold))
+                    .frame(width: 96, height: 96)
+                    .shadow(color: .black.opacity(0.35), radius: 14, y: 6)
+                    .padding(.bottom, 18)
+                Text(verbatim: "NeoRAR")
+                    .font(.system(size: 24, weight: .semibold))
                 Text(version)
-                    .font(.callout)
+                    .font(.system(size: 12))
                     .monospacedDigit()
                     .foregroundStyle(.secondary)
                     .textSelection(.enabled)
-                    .padding(.top, 3)
+                    .padding(.top, 4)
 
-                Text("O Neorar abre, extrai e comprime arquivos no Mac: RAR (inclusive volumes e senha), 7Z, ZIP, TAR e dezenas de outros formatos. Também testa, repara e edita arquivos compactados, sem sair do Finder.")
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
+                Text("O NeoRAR abre, extrai e comprime arquivos no Mac: RAR (inclusive volumes e senha), 7Z, ZIP, TAR e dezenas de outros formatos. Também testa, repara e edita arquivos compactados, sem sair do Finder.")
+                    .font(.system(size: 13))
                     .multilineTextAlignment(.center)
                     .lineSpacing(3)
-                    .frame(maxWidth: 440)
-                    .padding(.top, 22)
+                    .frame(maxWidth: 460)
+                    .padding(.top, 26)
 
-                VStack(spacing: 6) {
-                    CreditLine(name: "UnRAR", owner: "Alexander L. Roshal · RARLAB", license: "Licença UnRAR (freeware)")
-                    CreditLine(name: "7-Zip", owner: "Igor Pavlov", license: "GNU LGPL 2.1 + BSD 3-Clause")
-                    CreditLine(name: "libarchive", owner: "Tim Kientzle e colaboradores", license: "BSD 2-Clause")
-                }
-                .padding(14)
-                .frame(maxWidth: 440)
-                .background(RoundedRectangle(cornerRadius: 10).fill(.quinary))
-                .padding(.top, 20)
-
-                Text("A criação e a edição de arquivos RAR usam o rar oficial da RARLAB, que não acompanha o Neorar e tem licença própria.")
-                    .font(.caption)
-                    .foregroundStyle(.tertiary)
+                Text("O NeoRAR é software livre sob a GNU GPL v3.0. Ele se apoia nos projetos de código aberto listados nas licenças.")
+                    .font(.system(size: 11.5))
+                    .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
-                    .frame(maxWidth: 420)
-                    .padding(.top, 12)
+                    .frame(maxWidth: 460)
+                    .padding(.top, 14)
 
                 HStack(spacing: 18) {
+                    Link("witchmymac.com", destination: URL(string: "http://witchmymac.com")!)
+                        .font(.system(size: 12))
                     Button("Licenças de código aberto") { showLicenses = true }
                         .buttonStyle(.link)
-                    Link("rarlab.com", destination: URL(string: "https://www.rarlab.com")!)
-                    Link("7-zip.org", destination: URL(string: "https://www.7-zip.org")!)
+                        .font(.system(size: 12))
                 }
-                .font(.callout)
-                .padding(.top, 14)
-
-                Text("© 2026 Neorar")
-                    .font(.caption2)
-                    .foregroundStyle(.tertiary)
-                    .padding(.top, 18)
+                .padding(.top, 10)
             }
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 24)
+            .padding(.top, 36)
+            .padding(.bottom, 32)
         }
         .scrollIndicators(.never)
         .sheet(isPresented: $showLicenses) { LicensesSheet() }
-    }
-}
-
-private struct CreditLine: View {
-    let name: String
-    let owner: LocalizedStringKey
-    let license: LocalizedStringKey
-
-    var body: some View {
-        HStack(alignment: .firstTextBaseline) {
-            Text(name).font(.callout.weight(.semibold))
-            Text(owner).font(.caption).foregroundStyle(.secondary)
-            Spacer()
-            Text(license).font(.caption.weight(.medium)).foregroundStyle(.secondary)
-        }
     }
 }
 
@@ -401,6 +371,7 @@ private struct LicensesSheet: View {
 
     private var entries: [Entry] {
         [
+            Entry(id: "neorar", name: "NeoRAR", license: "GNU General Public License v3.0", text: Self.neorar),
             Entry(id: "unrar", name: "UnRAR 7.30", license: "UnRAR License",
                   text: bundled("UnRAR-license") ?? "UnRAR source code may be used in any software to handle RAR archives without limitations free of charge, but cannot be used to develop RAR (WinRAR) compatible archiver and to re-create RAR compression algorithm, which is proprietary."),
             Entry(id: "7zip", name: "7-Zip 26.04", license: "GNU LGPL 2.1 · BSD 3-Clause · unRAR restriction",
@@ -423,7 +394,7 @@ private struct LicensesSheet: View {
             Divider()
             ScrollView {
                 VStack(alignment: .leading, spacing: 22) {
-                    Text("O Neorar inclui ou usa os componentes abaixo. Os avisos de copyright e as licenças ficam aqui, como essas licenças exigem.")
+                    Text("O NeoRAR inclui ou usa os componentes abaixo. Os avisos de copyright e as licenças ficam aqui, como essas licenças exigem.")
                         .font(.callout)
                         .foregroundStyle(.secondary)
                     ForEach(entries) { entry in
@@ -456,6 +427,22 @@ private struct LicensesSheet: View {
             }
             .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
     }
+
+    private static let neorar = """
+    Copyright (C) 2026 Matheus Faria
+    Source code: https://github.com/matthfaria96/Neorar
+
+    NeoRAR is free software: you can redistribute it and/or modify it under \
+    the terms of the GNU General Public License as published by the Free \
+    Software Foundation, either version 3 of the License, or (at your option) any \
+    later version. It is distributed WITHOUT ANY WARRANTY; without even the implied \
+    warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+    The rar command-line tool is not covered by this license: it is RARLAB's own \
+    software and is not bundled with NeoRAR.
+
+    Full license text: https://www.gnu.org/licenses/gpl-3.0.html
+    """
 
     private static let libarchive = """
     Copyright (c) 2003-2018 Tim Kientzle and contributors

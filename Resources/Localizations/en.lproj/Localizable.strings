@@ -285,8 +285,9 @@
 "Não é possível reparar “%@”" = "“%@” can’t be repaired";
 "O 7-Zip terminou com o código %d." = "7-Zip ended with code %d.";
 "O Neorar abre direto em Downloads para você começar." = "Neorar opens right in Downloads so you can get started.";
-"O Neorar abre, extrai e comprime arquivos no Mac: RAR (inclusive volumes e senha), 7Z, ZIP, TAR e dezenas de outros formatos. Também testa, repara e edita arquivos compactados, sem sair do Finder." = "Neorar opens, extracts and compresses archives on the Mac: RAR (including multi-part and password-protected), 7Z, ZIP, TAR and dozens of other formats. It also tests, repairs and edits archives, right from Finder.";
-"O Neorar inclui ou usa os componentes abaixo. Os avisos de copyright e as licenças ficam aqui, como essas licenças exigem." = "Neorar includes or uses the components below. Their copyright notices and licenses are kept here, as those licenses require.";
+"O NeoRAR abre, extrai e comprime arquivos no Mac: RAR (inclusive volumes e senha), 7Z, ZIP, TAR e dezenas de outros formatos. Também testa, repara e edita arquivos compactados, sem sair do Finder." = "NeoRAR opens, extracts and compresses archives on the Mac: RAR (including multi-part and password-protected), 7Z, ZIP, TAR and dozens of other formats. It also tests, repairs and edits archives, right from Finder.";
+"O NeoRAR inclui ou usa os componentes abaixo. Os avisos de copyright e as licenças ficam aqui, como essas licenças exigem." = "NeoRAR includes or uses the components below. Their copyright notices and licenses are kept here, as those licenses require.";
+"O NeoRAR é software livre sob a GNU GPL v3.0. Ele se apoia nos projetos de código aberto listados nas licenças." = "NeoRAR is free software under the GNU GPL v3.0. It builds on the open-source projects listed in its licenses.";
 "O arquivo compactado não foi criado." = "The archive was not created.";
 "O arquivo está corrompido." = "The archive is corrupted.";
 "O arquivo está incompleto: falta um volume." = "The archive is incomplete: a part is missing.";
