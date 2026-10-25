@@ -31,7 +31,7 @@ struct ArchiveInfoSheet: View {
                         LabeledContent("Tamanho do arquivo", value: Format.bytes(archiveSize))
                         LabeledContent("Taxa de compressão", value: ratio(listing))
                         LabeledContent("Volumes", value: "\(VolumeSet.resolve(url).members.count)")
-                        LabeledContent("Sólido", value: listing.isSolid ? "Sim" : "Não")
+                        LabeledContent("Sólido", value: listing.isSolid ? String(localized: "Sim") : String(localized: "Não"))
                         LabeledContent("Criptografia", value: encryption(listing))
                         if let comment = listing.comment {
                             Section("Comentário") {

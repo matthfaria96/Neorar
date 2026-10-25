@@ -440,3 +440,5 @@
 "“Comprimir com o Neorar”" = "« Compresser avec Neorar »";
 "“Extrair Aqui” nunca espalha vários arquivos na pasta: eles vão para uma pasta com o nome do arquivo compactado. Um único item é extraído direto." = "« Extraire ici » n’éparpille jamais plusieurs fichiers dans le dossier : ils vont dans un dossier portant le nom de l’archive. Un élément unique est extrait directement.";
 "Verificar Atualizações…" = "Rechercher des mises à jour…";
+"Sim" = "Oui";
+"Não" = "Non";

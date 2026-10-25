@@ -9,6 +9,7 @@ struct MainView: View {
     @State private var dropTargeted = false
     @State private var previewURL: URL?
     @FocusState private var searchFocused: Bool
+    @Environment(\.openSettings) private var openSettings
 
     private var mode: ViewMode { ViewMode(rawValue: viewMode) ?? .list }
 
@@ -39,6 +40,7 @@ struct MainView: View {
         .animation(.smooth(duration: 0.28), value: model.trayJobs.isEmpty)
         .toolbar { NavigationToolbar(viewMode: $viewMode, searchText: searchText, searchFocused: $searchFocused) }
         .toolbar(removing: .title)
+        .onReceive(NotificationCenter.default.publisher(for: Showcase.openSettings)) { _ in openSettings() }
         .navigationTitle(model.browser?.archive.lastPathComponent ?? FileManager.default.displayName(atPath: model.folder.location.path))
         .quickLookPreview($previewURL, in: model.folder.selectedItems.filter { !$0.isDirectory }.map(\.url))
         .dropDestination(for: URL.self) { urls, _ in

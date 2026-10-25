@@ -72,6 +72,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 if Self.isQuiet, !Self.receivedFinderWork { Self.showMainWindow() }
             }
         }
+        // NEORAR_SHOWCASE=1 (site screenshots): nothing that reaches the installed Neorar or Finder.
+        if Showcase.isActive {
+            (AppTheme(rawValue: UserDefaults.standard.string(forKey: PrefKey.theme) ?? "") ?? .system).apply()
+            Showcase.start()
+            return
+        }
         NSApp.servicesProvider = services
         NSUpdateDynamicServices()
         ExtractionService.clearPreviewCache()

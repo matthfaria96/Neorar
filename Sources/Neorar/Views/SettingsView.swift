@@ -114,8 +114,8 @@ private struct GeneralSettings: View {
             } footer: {
                 Text("Os itens aparecem no clique direito do Finder, junto com os de outros apps. O menu “Comprimir” do próprio macOS não pode ser removido.")
             }
-            .onChange(of: finderShowExtract) { Preferences.broadcastFinderMenu() }
-            .onChange(of: finderShowCompress) { Preferences.broadcastFinderMenu() }
+            .onChange(of: finderShowExtract) { if !Showcase.isActive { Preferences.broadcastFinderMenu() } }
+            .onChange(of: finderShowCompress) { if !Showcase.isActive { Preferences.broadcastFinderMenu() } }
 
             Section("Comportamento") {
                 Picker("Ao abrir um arquivo compactado", selection: $openBehavior) {

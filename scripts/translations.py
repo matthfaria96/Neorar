@@ -3,6 +3,8 @@
 # Run scripts/make-localizations.py to regenerate Resources/<lang>.lproj/Localizable.strings.
 
 T = {
+"Sim": ("Yes", "Sí", "Oui", "Ja"),
+"Não": ("No", "No", "Non", "Nein"),
 "Senha necessária": ("Password required", "Contraseña necesaria", "Mot de passe requis", "Passwort erforderlich"),
 "Extrair": ("Extract", "Extraer", "Extraire", "Entpacken"),
 "%lld pendências": ("%lld items to turn on", "%lld pendientes", "%lld éléments à activer", "%lld offene Punkte"),
