@@ -42,15 +42,19 @@ A extensão é ativada em Ajustes › Geral › Menu do Finder (ou Ajustes do Si
 
 Requer macOS 26 ou mais recente.
 
-Baixe o `Neorar-<versão>.dmg` em [Releases](https://github.com/matthfaria96/Neorar/releases) ou no [witchmymac.com](https://witchmymac.com), abra e arraste o **Neorar** para a pasta Aplicativos.
+Escolha um:
 
-O app não é notarizado, então o macOS bloqueia a primeira abertura. Para liberar, cole no Terminal:
-
-```sh
-xattr -dr com.apple.quarantine "/Applications/Neorar.app"
-```
-
-Isso só remove a marca de "baixado da internet" desse app. Sem usar o Terminal: abra o app, clique em OK no aviso e vá em Ajustes do Sistema › Privacidade e Segurança › Abrir Mesmo Assim.
+1. **Terminal, uma linha (recomendado).** Cole isto no Terminal:
+   ```sh
+   curl -fsSL https://witchmymac.com/install.sh | bash -s neorar
+   ```
+   Ele baixa a versão mais nova do GitHub, confere o SHA-256, instala o Neorar em Aplicativos e abre. Não aparece aviso do macOS, porque arquivos baixados pelo `curl` não ganham a marca de "baixado da internet". Rode a mesma linha de novo para atualizar. O script é aberto: [install.sh](https://witchmymac.com/install.sh).
+2. **Baixe o DMG** em [Releases](https://github.com/matthfaria96/Neorar/releases) ou em [witchmymac.com](https://witchmymac.com), arraste o Neorar para Aplicativos e libere uma vez com:
+   ```sh
+   xattr -dr com.apple.quarantine "/Applications/Neorar.app"
+   ```
+   Ele só tira daquele app a marca de "baixado da internet".
+3. **Baixe o DMG** e libere pelos Ajustes do Sistema: abra o app, clique em OK no aviso e vá em Ajustes do Sistema › Privacidade e Segurança › Abrir Mesmo Assim.
 
 ## Build
 
