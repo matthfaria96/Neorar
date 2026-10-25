@@ -38,6 +38,20 @@ Turn the extension on in Settings › General › Finder menu (or System Setting
 - Passwords go through stdin (except in the optional `unar` fallback, which only takes a password as an argument).
 - Extraction happens in a hidden folder at the destination; the result is moved with a `rename`, and cancelling leaves no leftovers.
 
+## Install
+
+Requires macOS 26 or later.
+
+Download `Neorar-<version>.dmg` from [Releases](https://github.com/matthfaria96/Neorar/releases) or from [witchmymac.com](https://witchmymac.com), open it and drag **Neorar** to Applications.
+
+The app is not notarized, so macOS blocks it the first time. To allow it, paste this in Terminal:
+
+```sh
+xattr -dr com.apple.quarantine "/Applications/Neorar.app"
+```
+
+It only removes the "downloaded from the internet" mark from that app. Without Terminal: open the app, click OK on the warning, then go to System Settings › Privacy & Security and click Open Anyway.
+
 ## Build
 
 Requires Xcode 27 (SwiftUI's macro plugins don't ship with the Command Line Tools).

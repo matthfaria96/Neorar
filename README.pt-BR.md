@@ -38,6 +38,20 @@ A extensão é ativada em Ajustes › Geral › Menu do Finder (ou Ajustes do Si
 - Senhas vão por stdin (exceto no fallback opcional `unar`, que só aceita senha por argumento).
 - A extração acontece numa pasta oculta no destino; o resultado é movido com um `rename`, e cancelar não deixa lixo.
 
+## Instalação
+
+Requer macOS 26 ou mais recente.
+
+Baixe o `Neorar-<versão>.dmg` em [Releases](https://github.com/matthfaria96/Neorar/releases) ou no [witchmymac.com](https://witchmymac.com), abra e arraste o **Neorar** para a pasta Aplicativos.
+
+O app não é notarizado, então o macOS bloqueia a primeira abertura. Para liberar, cole no Terminal:
+
+```sh
+xattr -dr com.apple.quarantine "/Applications/Neorar.app"
+```
+
+Isso só remove a marca de "baixado da internet" desse app. Sem usar o Terminal: abra o app, clique em OK no aviso e vá em Ajustes do Sistema › Privacidade e Segurança › Abrir Mesmo Assim.
+
 ## Build
 
 Requer Xcode 27 (os plugins de macro do SwiftUI não vêm nas Command Line Tools).
