@@ -397,6 +397,7 @@ T = {
 "Será criado como %@": ("Will be created as %@", "Se creará como %@", "Sera créé sous %@", "Wird als %@ erstellt"),
 "Sistema": ("System", "Sistema", "Système", "System"),
 "Sobre": ("About", "Acerca de", "À propos", "Über"),
+"Verificar Atualizações…": ("Check for Updates…", "Buscar actualizaciones…", "Rechercher des mises à jour…", "Nach Updates suchen …"),
 "Solte para abrir, extrair ou comprimir": ("Drop to open, extract or compress", "Suelta para abrir, extraer o comprimir", "Déposez pour ouvrir, extraire ou compresser", "Ablegen zum Öffnen, Entpacken oder Komprimieren"),
 "Solte para adicionar ao arquivo": ("Drop to add to the archive", "Suelta para añadir al archivo", "Déposez pour ajouter à l’archive", "Ablegen, um zum Archiv hinzuzufügen"),
 "Status": ("Status", "Estado", "État", "Status"),

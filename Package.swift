@@ -18,6 +18,10 @@ let package = Package(
     products: [
         .executable(name: "Neorar", targets: ["Neorar"]),
     ],
+    dependencies: [
+        // In-app updates (MIT), feed and key in Resources/Info.plist.
+        .package(url: "https://github.com/sparkle-project/Sparkle", from: "2.10.0"),
+    ],
     targets: [
         .target(
             name: "CUnrar",
@@ -48,7 +52,7 @@ let package = Package(
         ),
         .executableTarget(
             name: "Neorar",
-            dependencies: ["NeorarCore"],
+            dependencies: ["NeorarCore", .product(name: "Sparkle", package: "Sparkle")],
             swiftSettings: [.defaultIsolation(MainActor.self)]
         ),
         .testTarget(

@@ -348,6 +348,10 @@ private struct AboutSettings: View {
                         .font(.system(size: 12))
                 }
                 .padding(.top, 10)
+
+                CheckForUpdatesButton()
+                    .controlSize(.small)
+                    .padding(.top, 14)
             }
             .frame(maxWidth: .infinity)
             .padding(.top, 36)
@@ -377,6 +381,7 @@ private struct LicensesSheet: View {
             Entry(id: "7zip", name: "7-Zip 26.04", license: "GNU LGPL 2.1 · BSD 3-Clause · unRAR restriction",
                   text: bundled("7-Zip-License") ?? "7-Zip Copyright (C) 1999-2026 Igor Pavlov. Licensed under the GNU LGPL. https://www.7-zip.org/license.txt"),
             Entry(id: "libarchive", name: "libarchive", license: "BSD 2-Clause", text: Self.libarchive),
+            Entry(id: "sparkle", name: "Sparkle", license: "MIT License", text: Self.sparkle),
             Entry(id: "rar", name: "rar (RARLAB)", license: "Shareware — não incluído", text: Self.rarNote),
             Entry(id: "unar", name: "unar / lsar (The Unarchiver)", license: "GNU LGPL 2.1 — não incluído", text: Self.unarNote),
         ]
@@ -456,6 +461,32 @@ private struct LicensesSheet: View {
     THIS SOFTWARE IS PROVIDED BY THE AUTHOR(S) ``AS IS'' AND ANY EXPRESS OR IMPLIED     WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF     MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT     SHALL THE AUTHOR(S) BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,     EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT     OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS     INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,     STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY     OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     Neorar uses the copy of libarchive that ships with macOS (/usr/lib/libarchive.2.dylib).
+    """
+
+    private static let sparkle = """
+    Copyright (c) 2006-2013 Andy Matuschak. Copyright (c) 2009-2013 Elgato Systems GmbH. \
+    Copyright (c) 2011-2014 Kornel Lesiński. Copyright (c) 2015-2017 Mayur Pawashe. \
+    Copyright (c) 2014 C.W. Betts. Copyright (c) 2014 Petroules Corporation. \
+    Copyright (c) 2014 Big Nerd Ranch. All rights reserved.
+    Source code: https://github.com/sparkle-project/Sparkle
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy \
+    of this software and associated documentation files (the "Software"), to deal \
+    in the Software without restriction, including without limitation the rights \
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell \
+    copies of the Software, and to permit persons to whom the Software is \
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all \
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR \
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, \
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE \
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER \
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, \
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE \
+    SOFTWARE.
     """
 
     private static let rarNote = """

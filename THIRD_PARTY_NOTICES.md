@@ -15,6 +15,9 @@ Binário oficial `7zz` 26.04 para macOS, distribuído sem modificações dentro 
 ## libarchive
 Usada a partir da biblioteca do sistema (`/usr/lib/libarchive.2.dylib`). Licença BSD.
 
+## Sparkle
+Framework de atualizações dentro do app (Verificar Atualizações…), embutido em `Contents/Frameworks/Sparkle.framework`. Licença MIT, Copyright (c) 2006-2013 Andy Matuschak e colaboradores. https://github.com/sparkle-project/Sparkle
+
 ## rar (RARLAB), opcional
 Não é distribuído com o Neorar. Quando o usuário pede, o app baixa o `rar` oficial de rarlab.com para `~/Library/Application Support/Neorar/RAR`. É shareware sob a licença da RARLAB: gratuito por 40 dias, depois exige licença paga.
 

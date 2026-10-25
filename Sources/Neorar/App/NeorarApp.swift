@@ -19,6 +19,9 @@ struct NeorarApp: App {
         .windowToolbarStyle(.unified)
         .commands {
             ViewCommands()
+            CommandGroup(after: .appInfo) {
+                CheckForUpdatesButton()
+            }
             CommandGroup(after: .pasteboard) {
                 Button("Copiar Caminho") { model.copyCurrentPath() }
                     .keyboardShortcut("c", modifiers: [.command, .option])
@@ -74,6 +77,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         ExtractionService.clearPreviewCache()
         (AppTheme(rawValue: UserDefaults.standard.string(forKey: PrefKey.theme) ?? "") ?? .system).apply()
         Preferences.broadcastFinderMenu()
+        // Updates (Sparkle): daily check and the Verificar Atualizações… item.
+        AppUpdater.shared.start()
     }
 
     /// SwiftUI shows the main window at launch; in background mode it never stays on screen.
