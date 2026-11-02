@@ -43,7 +43,9 @@ final class AppModel {
 
     var isOwnDrag: Bool { ownDragChangeCount == NSPasteboard(name: .drag).changeCount }
 
-    var hasActiveWork: Bool { jobs.contains { $0.isActive || $0.isWaiting } || compress.isRunning }
+    /// One-click compressions in progress; they run outside `compress`, but quitting would still cut them short.
+    private var quickCompressions = 0
+    var hasActiveWork: Bool { jobs.contains { $0.isActive || $0.isWaiting } || compress.isRunning || quickCompressions > 0 }
     var activeJobs: [ExtractionJob] { jobs.filter(\.isActive) }
 
     // MARK: - Navigation
@@ -168,8 +170,10 @@ final class AppModel {
         let output = FileNaming.uniqueURL(in: directory, name: "\(name).\(format.fileExtension)", isDirectory: false)
         let working = Toast(style: .info, title: String(localized: "Comprimindo em \(format.title)…"), subtitle: output.lastPathComponent)
         post(working)
+        quickCompressions += 1
         Task {
             defer {
+                quickCompressions -= 1
                 dismissToast(working.id)
                 if revealInFinder { AppDelegate.quitIfIdle() }
             }
